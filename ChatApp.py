@@ -46,30 +46,30 @@ if __name__ == '__main__':
 
         user_name = sys.argv[2]
 
-        # if  sys.argv[3] == "localhost":
-        #     pass
-        # elif sys.argv[3].count(".") == 3 and all(isIPv4(i) for i in sys.argv[3].split(".")):
-        #     pass
-        # elif sys.argv[3].count(":") == 7 and all(isIPv6(i) for i in sys.argv[3].split(":")):
-        #     pass
-        # else:
-        #     sys.exit(">>> [Invalid ip address.]")
+        if  sys.argv[3] == "localhost":
+            pass
+        elif sys.argv[3].count(".") == 3 and all(isIPv4(i) for i in sys.argv[3].split(".")):
+            pass
+        elif sys.argv[3].count(":") == 7 and all(isIPv6(i) for i in sys.argv[3].split(":")):
+            pass
+        else:
+            sys.exit(">>> [Invalid ip address.]")
 
-        # try:
-        #     port = int(sys.argv[4])
-        #     # 1024 - 65535 are available
-        #     if port < 1024 or port > 65535:
-        #         sys.exit(">>> [Server port should be between 1024 - 65535.]")
-        # except:
-        #     sys.exit(">>> [Server port should be int.]")
+        try:
+            port = int(sys.argv[4])
+            # 1024 - 65535 are available
+            if port < 1024 or port > 65535:
+                sys.exit(">>> [Server port should be between 1024 - 65535.]")
+        except:
+            sys.exit(">>> [Server port should be int.]")
 
-        # try:
-        #     port = int(sys.argv[5])
-        #     # 1024 - 65535 are available
-        #     if port < 1024 or port > 65535:
-        #         sys.exit(">>> [Client port should be between 1024 - 65535.]")
-        # except:
-        #     sys.exit(">>> [Client port should be int]")
+        try:
+            port = int(sys.argv[5])
+            # 1024 - 65535 are available
+            if port < 1024 or port > 65535:
+                sys.exit(">>> [Client port should be between 1024 - 65535.]")
+        except:
+            sys.exit(">>> [Client port should be int]")
 
         server_ip = sys.argv[3]
         server_port = int(sys.argv[4])

@@ -18,8 +18,8 @@ class Server:
         self.server_socket.bind(('', port))
 
         # multi-threading
-        server_send = threading.Thread(target=self.listen)
-        server_send.start()
+        server_listen = threading.Thread(target=self.listen)
+        server_listen.start()
 
     # listen for incoming connections & msg
     def listen(self):

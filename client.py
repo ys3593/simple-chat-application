@@ -170,8 +170,8 @@ class Client:
                     print(">>> [Invalid command]")
                 elif cmd[1] not in self.clients:
                     print(">>> [Invalid client name.]")
-                elif cmd[1] == self.name:
-                    print(">>> [Cannot send message to oneself.]")
+                # elif cmd[1] == self.name:
+                #     print(">>> [Cannot send message to oneself.]")
                 # check client online or not:
                 elif not self.clients[cmd[1]][2]:
                     print(">>> [Client not online. Try others.]")
