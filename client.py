@@ -60,7 +60,7 @@ class Client:
 
             if header == "updateinfo":
                 self.clients = json.loads(lines[1])
-                print(self.clients)
+                # print(self.clients)
                 print(">>> [Client table updated.]")
 
             if header == "nameexists":
@@ -154,7 +154,7 @@ class Client:
                 self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
 
     def cmd_process(self):
-        time.sleep(0.2)
+        time.sleep(0.5)
         while True:
             try:
                 if self.normal_mode:

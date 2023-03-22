@@ -83,6 +83,7 @@ class Server:
 
     # broadcast the complete table of active clients to all the online clients
     def broadcast(self):
+        print(">>> [Client table updated.]")
         for name in self.clients:
             client_port, client_ip, online_status = self.clients[name]
             if online_status:
