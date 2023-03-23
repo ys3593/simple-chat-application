@@ -14,20 +14,20 @@ Commands for Running the Program
 
 ### Initiate the Server Process:  
 ```
-python ChatApp.py -s <port> 
+python3 ChatApp.py -s <port> 
 ```
 Example:
 ```
-python ChatApp.py -s 1025 
+python3 ChatApp.py -s 1025 
 ```
 
 ### Initiate the Client Process: 
 ```
-python ChatApp.py -c <name> <server-ip> <server-port> <client-port>
+python3 ChatApp.py -c <name> <server-ip> <server-port> <client-port>
 ```
 Example:
 ```
-python ChatApp.py -c yao localhost 1025 2000 
+python3 ChatApp.py -c yao localhost 1025 2000 
 ```
 
 ### Client Commands:

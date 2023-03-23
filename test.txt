@@ -1,13 +1,13 @@
 Test-case 1:
 server:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -s 1025
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -s 1025
 >>> [Client table updated.]
 >>> [Client table updated.]
 >>> [Client table updated.]
 >>> [Client table updated.]
 
 client x:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c x localhost 1025 2000
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c x localhost 1025 2000
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> [Client table updated.]
@@ -22,7 +22,7 @@ client x:
 >>> [You are Offline. Bye.]
 
 client y:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c y localhost 1025 2001
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c y localhost 1025 2001
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> [Client table updated.]
@@ -37,7 +37,7 @@ client y:
 >>> [Client not online. Try others.]
 
 client z:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c z localhost 1025 2020
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c z localhost 1025 2020
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> x: hello from x
@@ -53,13 +53,13 @@ client z:
 
 Test-case 2:
 server:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -s 1025
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -s 1025
 >>> [Client table updated.]
 >>> [Client table updated.]
 >>> [Client table updated.]
 
 client x:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c x localhost 1025 2000
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c x localhost 1025 2000
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> [Client table updated.]
@@ -68,7 +68,7 @@ client x:
 >>> [Client not online. Try others.]
 
 client y:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c y localhost 1025 2001
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c y localhost 1025 2001
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> dereg y
@@ -77,7 +77,7 @@ client y:
 
 Test-case 3:
 server:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -s 1025
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -s 1025
 >>> [Client table updated.]
 >>> [Client table updated.]
 >>> [Client table updated.]
@@ -96,7 +96,7 @@ server:
 {'hello': ['x', 'y']}
 
 client x:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c x localhost 1025 2000
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c x localhost 1025 2000
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> [Client table updated.]
@@ -110,29 +110,29 @@ client x:
 >>> (hello) [Message received by Server.]
 
 client y:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c y localhost 1025 2001
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c y localhost 1025 2001
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> [Client table updated.]
 >>> [Client table updated.]
 >>> join_group hello
 >>> [Entered group hello successfully]
->>> (hello) >>> (hello) Group_Message x: the first group message
+>>> (hello) Group_Message x: the first group message
 
 client z:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c z localhost 1025 2020
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c z localhost 1025 2020
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> [Client table updated.]
 >>> join_group hello
 >>> [Entered group hello successfully]
->>> (hello) >>> (hello) Group_Message x: the first group message
+>>> (hello) Group_Message x: the first group message
 >>> (hello) leave_group
 >>> [Leave group chat hello]
 >>> a: hello from a
 
 client a:
-(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python ChatApp.py -c a localhost 1025 2021
+(base) kysher@Yaochens-MacBook-Pro simple-chat-application % python3 ChatApp.py -c a localhost 1025 2021
 >>> [Welcome, You are registered.]
 >>> [Client table updated.]
 >>> send z hello from a

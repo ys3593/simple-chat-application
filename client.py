@@ -154,8 +154,8 @@ class Client:
                 self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
 
     def cmd_process(self):
-        time.sleep(0.5)
         while True:
+            time.sleep(0.5)
             try:
                 if self.normal_mode:
                     cmd = input(">>> ")
