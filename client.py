@@ -203,7 +203,9 @@ class Client:
                     # wait for an ack from the server within 500 msecs -> no ack: retry for 5 time
                     self.dereg_request_ack = False
                     self.dereg_request_no = 0
-                    while self.dereg_request_no < 5 and not self.dereg_request_ack:
+                    while self.dereg_request_no < 6 and not self.dereg_request_ack:
+                        if self.dereg_request_no != 0:
+                            print(">>> [Server not responding. Retry!]")
                         to_send = "deregister" + "\n" + self.name
                         self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
                         self.dereg_request_no += 1
@@ -224,7 +226,10 @@ class Client:
                     # wait for an ack from the server within 500 msecs -> no ack: retry for 5 time
                     self.create_group_request_ack = False
                     self.create_group_request_no = 0
-                    while self.create_group_request_no < 5 and not self.create_group_request_ack:
+                    while self.create_group_request_no < 6 and not self.create_group_request_ack:
+                        if self.create_group_request_no != 0:
+                            print(">>> [Server not responding. Retry!]")
+
                         to_send = "create" + "\n" + group_name + "\n" + self.name
                         self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
                         self.create_group_request_no += 1
@@ -244,7 +249,10 @@ class Client:
                     # wait for an ack from the server within 500 msecs -> no ack: retry for 5 time
                     self.list_groups_request_ack = False
                     self.list_groups_request_no = 0
-                    while self.list_groups_request_no < 5 and not self.list_groups_request_ack:
+                    while self.list_groups_request_no < 6 and not self.list_groups_request_ack:
+                        if self.list_groups_request_no != 0:
+                            print(">>> [Server not responding. Retry!]")
+
                         to_send = "listgroups" + "\n" + self.name
                         self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
                         self.list_groups_request_no += 1
@@ -265,7 +273,10 @@ class Client:
                     # wait for an ack from the server within 500 msecs -> no ack: retry for 5 time
                     self.join_group_request_ack = False
                     self.join_group_request_no = 0
-                    while self.join_group_request_no < 5 and not self.join_group_request_ack:
+                    while self.join_group_request_no < 6 and not self.join_group_request_ack:
+                        if self.join_group_request_no != 0:
+                            print(">>> [Server not responding. Retry!]")
+
                         to_send = "join" + "\n" + group_name + "\n" + self.name
                         self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
                         self.join_group_request_no += 1
@@ -285,7 +296,10 @@ class Client:
                     # wait for an ack from the server within 500 msecs -> no ack: retry for 5 time
                     self.list_members_request_ack = False
                     self.list_members_request_no = 0
-                    while self.list_members_request_no < 5 and not self.list_members_request_ack:
+                    while self.list_members_request_no < 6 and not self.list_members_request_ack:
+                        if self.list_members_request_no != 0:
+                            print(f">>> ({self.group_name}) [Server not responding. Retry!]")
+
                         to_send = "listmembers" + "\n" + self.group_name + "\n" + self.name
                         self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
                         self.list_members_request_no += 1
@@ -305,7 +319,10 @@ class Client:
                     # wait for an ack from the server within 500 msecs -> no ack: retry for 5 time
                     self.leave_group_request_ack = False
                     self.leave_group_request_no = 0
-                    while self.leave_group_request_no < 5 and not self.leave_group_request_ack:
+                    while self.leave_group_request_no < 6 and not self.leave_group_request_ack:
+                        if self.leave_group_request_no != 0:
+                            print(f">>> ({self.group_name}) [Server not responding. Retry!]")
+
                         to_send = "leave" + "\n" + self.group_name + "\n" + self.name
                         self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
                         self.leave_group_request_no += 1
@@ -326,7 +343,10 @@ class Client:
                     # wait for an ack from the server within 500 msecs -> no ack: retry for 5 time
                     self.send_group_request_ack = False
                     self.send_group_request_no = 0
-                    while self.send_group_request_no < 5 and not self.send_group_request_ack:
+                    while self.send_group_request_no < 6 and not self.send_group_request_ack:
+                        if self.send_group_request_no != 0:
+                            print(f">>> ({self.group_name}) [Server not responding. Retry!]")
+
                         to_send = "sendgroup" + "\n" + self.group_name + "\n" + self.name + "\n" + message
                         self.client_socket.sendto(to_send.encode(), (self.server_ip, self.server_port))
                         self.send_group_request_no += 1
