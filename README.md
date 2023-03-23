@@ -5,6 +5,7 @@ Done by: Yaochen Shen (ys3593)
 Directory:
 ----
 - README.md
+- test.txt
 - ChatApp.py
 - server.py
 - client.py
