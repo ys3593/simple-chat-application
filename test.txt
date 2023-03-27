@@ -137,3 +137,79 @@ client a:
 >>> [Client table updated.]
 >>> send z hello from a
 >>> [Message received by z.]
+
+
+Test-case 4:
+1. start server
+2. start client x
+3. start client y
+4. start client z
+5. chat x -> x, y -> y, z -> z
+5. start client a
+6. client a creates a group called hello_a_group
+7. client x, y, z join the group
+8. send group message x-> y,z , but a does not receive the message.
+
+server:
+(base) kysher@Yaochens-MBP simple-chat-application % python3 ChatApp.py -s 1025
+>>> [Client table updated.]
+>>> [Client table updated.]
+>>> [Client table updated.]
+>>> [Client table updated.]
+>>> [Client a created group hello_a_group successfully]
+{'hello_a_group': []}
+>>> [Client x joined group hello_a_group]
+{'hello_a_group': ['x']}
+>>> [Client y joined group hello_a_group]
+{'hello_a_group': ['x', 'y']}
+>>> [Client z joined group hello_a_group]
+{'hello_a_group': ['x', 'y', 'z']}
+>>> [Client x sent group message: this is x in the group]
+{'hello_a_group': ['x', 'y', 'z']}
+
+client x:
+(base) kysher@Yaochens-MBP simple-chat-application % python3 ChatApp.py -c x localhost 1025 2000
+>>> [Welcome, You are registered.]
+>>> [Client table updated.]
+>>> [Client table updated.]
+>>> [Client table updated.]
+>>> send x hello myself
+>>> x: hello myself
+>>> [Message received by x.]
+>>> [Client table updated.]
+>>> join_group hello_a_group
+>>> [Entered group hello_a_group successfully]
+>>> (hello_a_group) send_group this is x in the group
+>>> (hello_a_group) [Message received by Server.]
+
+client y:
+(base) kysher@Yaochens-MBP simple-chat-application % python3 ChatApp.py -c y localhost 1025 2001
+>>> [Welcome, You are registered.]
+>>> [Client table updated.]
+>>> [Client table updated.]
+>>> send y hello myself
+>>> y: hello myself
+>>> [Message received by y.]
+>>> [Client table updated.]
+>>> join_group hello_a_group
+>>> [Entered group hello_a_group successfully]
+>>> (hello_a_group) Group_Message x: this is x in the group
+
+client z:
+(base) kysher@Yaochens-MBP simple-chat-application % python3 ChatApp.py -c z localhost 1025 2020
+>>> [Welcome, You are registered.]
+>>> [Client table updated.]
+>>> send z hello myself
+>>> z: hello myself
+>>> [Message received by z.]
+>>> [Client table updated.]
+>>> join_group hello_a_group
+>>> [Entered group hello_a_group successfully]
+>>> (hello_a_group) Group_Message x: this is x in the group
+
+client a:
+(base) kysher@Yaochens-MBP simple-chat-application % python3 ChatApp.py -c a localhost 1025 2021
+>>> [Welcome, You are registered.]
+>>> [Client table updated.]
+>>> create_group hello_a_group
+>>> [Group hello_a_group created by Server.]
